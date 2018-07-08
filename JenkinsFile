@@ -3,7 +3,8 @@ pipeline {
     stages{
         stage('Build'){
             steps {
-                sh 'mvn clean package'
+                env.MAVEN_PATH='/Users/Shared/Documents/jenkins-tutorial/apache-maven-3.5.4/bin'
+                sh '$MAVEN_PATH/mvn clean package'
             }
             post {
                 success {
